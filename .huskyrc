@@ -1,0 +1,17 @@
+{
+  "hooks": {
+    "pre-commit": [
+      "yarn lint",
+      "yarn format",
+      "yarn test"
+    ],
+    "commit-msg": [
+      "yarn commitlint"
+    ],
+    "pre-push": [
+      "yarn commitlint",
+      "git fetch --update-shallow"
+    ]
+  }
+}
+
