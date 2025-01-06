@@ -12,10 +12,17 @@ module.exports = {
   setupFilesAfterEnv: ["./jest.setup.js"],
   transform: {
     "^.+\\.(js|jsx|ts|tsx)$": "babel-jest",
-    "^.+\\.svg$": "<rootDir>/svgMock.js",
   },
   moduleNameMapper: {
-    "^@/(.*)$": "<rootDir>/src/$1",
+    "^@assets/(.*)$": "<rootDir>/src/assets/$1",
+    "^@components/(.*)$": "<rootDir>/src/components/$1",
+    "^@constants/(.*)$": "<rootDir>/src/constants/$1",
+    "^@decorators/(.*)$": "<rootDir>/src/decorators/$1",
+    "^@hooks/(.*)$": "<rootDir>/src/hooks/$1",
+    "^@providers/(.*)$": "<rootDir>/src/providers/$1",
+    "^@utils/(.*)$": "<rootDir>/src/utils/$1",
+    "^@styles/(.*)$": "<rootDir>/src/styles/$1",
+    "^@types/(.*)$": "<rootDir>/src/types/$1",
   },
 };
 
