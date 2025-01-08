@@ -1,10 +1,10 @@
-import { App as Component } from "./App";
+import { Month as Component } from "./Month";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Component> = {
   component: Component,
-  title: "App",
+  title: "Month",
   tags: ["autodocs"],
 };
 
@@ -12,8 +12,8 @@ export default meta;
 
 type Story = StoryObj<typeof Component>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
-    primary: true,
+    month: "1",
   },
 };
