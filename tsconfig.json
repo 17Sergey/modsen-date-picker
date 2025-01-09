@@ -30,6 +30,7 @@
       "@types/*": ["./src/types/*"]
     }
   },
+  "include": ["src/**/*", "src/styles/styled.d.ts", "jest.setup.js"],
   "exclude": ["node_modules", "lib"]
 }
 

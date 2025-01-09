@@ -7,23 +7,28 @@ import Month from "../Month";
 import Year from "../Year";
 
 interface ControlsProps {
-  month: Month;
-  year: Year;
+  month: string;
+  year: number;
+  onNext: VoidFunction;
+  onPrev: VoidFunction;
 }
 
-export const Controls: FC<ControlsProps> = ({ month, year }) => {
-  const handlePrevClick = () => {};
-  const handleNextClick = () => {};
+export const Controls: FC<ControlsProps> = ({
+  month,
+  year,
+  onNext,
+  onPrev,
+}) => {
   return (
     <div>
-      <IconButton onClick={handlePrevClick}>
+      <IconButton onClick={onPrev}>
         <NextArrow alt="Previous month" />
       </IconButton>
       <div>
         <Month month={month} />
         <Year year={year} />
       </div>
-      <IconButton onClick={handleNextClick}>
+      <IconButton onClick={onNext}>
         <NextArrow alt="Next month" />
       </IconButton>
     </div>

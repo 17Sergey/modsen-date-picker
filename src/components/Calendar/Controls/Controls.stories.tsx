@@ -14,7 +14,7 @@ type Story = StoryObj<typeof Component>;
 
 export const Default: Story = {
   args: {
-    month: "1",
+    month: "January",
     year: "2025",
   },
 };

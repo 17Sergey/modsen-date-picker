@@ -32,8 +32,7 @@ export const lightTheme = {
     primaryTransparent10: "#2F80ED1A",
   },
   fonts: {
-    primary: "Poppins",
-    secondary: "Open Sans",
+    primary: "Open Sans",
     size: {
       sm: "0.75rem", // 12px
       m: "0.875rem", // 14px

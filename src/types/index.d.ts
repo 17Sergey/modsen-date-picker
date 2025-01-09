@@ -4,7 +4,7 @@ interface Holiday {
   date: Date;
 }
 
-type Day = string;
+type Day = number;
 type WeekDay = string;
-type Month = string;
-type Year = string;
+type MonthWord = string;
+type Year = number;

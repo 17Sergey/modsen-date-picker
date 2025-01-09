@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 interface MonthProps {
-  month: Month;
+  month: MonthWord;
 }
 
 export const Month: FC<MonthProps> = ({ month }) => {

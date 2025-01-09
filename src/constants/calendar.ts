@@ -22,5 +22,24 @@ export enum MONTHS {
   December,
 }
 
+export const MONTH_NAMES = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+] as const;
+
+export const WEEK_DAYS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+
+export type MonthName = (typeof MONTH_NAMES)[number];
+
 export const MIN_WEEKS_DAYS = 35;
 export const MAX_WEEKS_DAYS = 42;
