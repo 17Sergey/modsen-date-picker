@@ -1,36 +1,26 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 
 import IconButton from "@components/IconButton";
 import NextArrow from "@components/Icons/NextArrow";
+import PrevArrow from "@components/Icons/PrevArrow";
 
-import Month from "../Month";
-import Year from "../Year";
+import { StyledWrapper } from "./Controls.styled";
 
-interface ControlsProps {
-  month: string;
-  year: number;
+interface ControlsProps extends PropsWithChildren {
   onNext: VoidFunction;
   onPrev: VoidFunction;
 }
 
-export const Controls: FC<ControlsProps> = ({
-  month,
-  year,
-  onNext,
-  onPrev,
-}) => {
+export const Controls: FC<ControlsProps> = ({ onNext, onPrev, children }) => {
   return (
-    <div>
+    <StyledWrapper>
       <IconButton onClick={onPrev}>
-        <NextArrow alt="Previous month" />
+        <PrevArrow alt="Previous month" />
       </IconButton>
-      <div>
-        <Month month={month} />
-        <Year year={year} />
-      </div>
+      {children}
       <IconButton onClick={onNext}>
         <NextArrow alt="Next month" />
       </IconButton>
-    </div>
+    </StyledWrapper>
   );
 };

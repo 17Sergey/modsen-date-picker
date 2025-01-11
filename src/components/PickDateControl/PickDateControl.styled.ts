@@ -1,43 +1,44 @@
 import styled from "styled-components";
 
-export const StyledWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
-`;
+export const StyledDateInput = styled.div<{ $isValid: boolean }>`
+  max-width: 100%;
 
-export const StyledDateLabel = styled.label`
-  font-size: ${({ theme }) => theme.fonts.size.base};
-  color: ${({ theme }) => theme.colors.textDefault};
-  margin-bottom: 8px;
-`;
-
-export const StyledDateInput = styled.div`
   display: flex;
   align-items: center;
-  border: 1px solid ${({ theme }) => theme.colors.neutral};
-  border-radius: 4px;
-  padding: 8px;
+  gap: ${({ theme }) => theme.paddings.sm};
+
+  border: 1px solid
+    ${({ theme, $isValid }) =>
+      $isValid ? theme.colors.neutral : theme.colors.holiday};
+  border-radius: ${({ theme }) => theme.paddings.xs};
+
+  margin-bottom: ${({ theme }) => theme.margins.sm};
+  padding: ${({ theme }) => theme.paddings.sm};
+
+  position: relative;
+
   background: ${({ theme }) => theme.colors.background};
   cursor: pointer;
+`;
 
-  &:hover {
-    border-color: ${({ theme }) => theme.colors.primary};
+export const StyledInput = styled.input`
+  max-width: 100%;
+  border: none;
+  outline: none;
+  flex-grow: 1;
+
+  margin-right: ${({ theme }) => theme.widths.icons.base};
+
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.placeholder};
   }
 `;
 
 export const StyledDateIcon = styled.div`
-  margin-right: 8px;
-  color: ${({ theme }) => theme.colors.textDefault};
+  flex-shrink: 0;
 `;
 
-export const StyledClearButton = styled.button`
-  background: transparent;
-  border: none;
-  color: ${({ theme }) => theme.colors.textDefault};
-  cursor: pointer;
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.primary};
-  }
+export const StyledClearButton = styled.div`
+  position: absolute;
+  right: ${({ theme }) => theme.paddings.sm};
 `;

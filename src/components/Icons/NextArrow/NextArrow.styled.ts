@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { iconBtn } from "@styles/mixins/iconBtn";
+import { icon } from "@styles/mixins/icon";
 
 export const StyledNextIcon = styled.img`
-  ${iconBtn}
+  ${icon}
 `;

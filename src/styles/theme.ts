@@ -14,6 +14,7 @@ export const lightTheme = {
     },
   },
   colors: {
+    black: "#000000",
     background: "#FFFFFF",
     textDefault: "#333333",
     textPrimary: "#FFFFFF",
@@ -22,10 +23,11 @@ export const lightTheme = {
     neutralBg: "#F1F1F1",
 
     textNeutralTransparent: "#A7B2C3",
-    textFooter: "#898989",
 
     disabled: "#AAAAAA",
+    holiday: "#FF000080",
     iconNeutral: "#AAAAAA",
+    placeholder: "#BBBBBB",
 
     primary: "#2F80ED",
     primaryTransparent60: "#2F80ED99",
@@ -34,8 +36,8 @@ export const lightTheme = {
   fonts: {
     primary: "Open Sans",
     size: {
-      sm: "0.75rem", // 12px
-      m: "0.875rem", // 14px
+      sm: "0.875rem", // 14px
+      m: "0.9375rem", // 15px
       base: "1rem", // 16px
       md: "1.25rem", // 20px
     },

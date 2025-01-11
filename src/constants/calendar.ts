@@ -37,7 +37,8 @@ export const MONTH_NAMES = [
   "December",
 ] as const;
 
-export const WEEK_DAYS = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+export const WEEK_DAYS_FROM_SUNDAY = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
+export const WEEK_DAYS_FROM_MONDAY = ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"];
 
 export type MonthName = (typeof MONTH_NAMES)[number];
 

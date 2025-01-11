@@ -6,7 +6,6 @@ import typescript from "@rollup/plugin-typescript";
 import alias from "@rollup/plugin-alias";
 import image from "@rollup/plugin-image";
 import url from "@rollup/plugin-url";
-import svgr from "@svgr/rollup";
 
 export default {
   input: "src/index.ts",
@@ -46,7 +45,6 @@ export default {
       ],
     }),
     url(),
-    svgr({ icon: true }),
     image(),
     alias({
       entries: [{ find: "@", replacement: "./src" }],
@@ -54,6 +52,6 @@ export default {
     typescript({ tsconfig: "./tsconfig.json" }),
     terser(),
   ],
-  external: ["react", "react-dom", "styled-components"]
+  external: ["react", "react-dom", "styled-components"],
 };
 

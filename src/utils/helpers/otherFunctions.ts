@@ -8,11 +8,20 @@ export const isSameDate = (firstDate: Date, secondDate: Date): boolean => {
   );
 };
 
-export const isHoliday = (date: Date, holidays: Holiday[]): boolean => {
+export const isDayFromDifferentMonth = (
+  firstDate: Date,
+  secondDate: Date,
+): boolean => {
+  return firstDate.getMonth() !== secondDate.getMonth();
+};
+
+export const isDateHoliday = (date: Date, holidays: Holiday[]): boolean => {
   return holidays.some((holiday) => isSameDate(date, holiday.date));
 };
 
-export const formatDate = (date: Date): string => {
+export const formatDate = (date: Date | null): string | null => {
+  if (date === null) return null;
+
   const day = date.getDate().toString().padStart(2, "0");
   const month = (date.getMonth() + DATE_INDEX_OFFSET)
     .toString()
