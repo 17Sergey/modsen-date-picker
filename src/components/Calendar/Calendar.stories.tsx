@@ -26,7 +26,7 @@ export const Default: Story = {
   args: {
     initialDate: new Date(),
     onDateSelect: (date: Date) => {
-      console.log("Selected date:", date);
+      console.log("Selected date:", date.getDate());
     },
   },
 };

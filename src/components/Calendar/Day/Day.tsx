@@ -12,6 +12,9 @@ export interface DayProps {
   isFromDifferentMonth?: boolean;
   isHoliday?: boolean;
   isWithTodos?: boolean;
+  isStartRange?: boolean;
+  isEndRange?: boolean;
+  isInRange?: boolean;
   hasTodos?: boolean;
   onOpenTodos?: VoidFunction;
 }
@@ -25,22 +28,28 @@ export const Day: FC<DayProps> = ({
   isHoliday = false,
   isWithTodos = false,
   hasTodos = false,
+  isStartRange = false,
+  isEndRange = false,
+  isInRange = false,
   onClick,
   onOpenTodos = () => {},
 }) => {
-  const handleOpen = (e: MouseEvent<HTMLButtonElement>) => {
+  const handleOpenTodos = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     onOpenTodos();
   };
   return (
     <StyledDay
+      $isEndRange={isEndRange}
       $isFromDifferentMonth={isFromDifferentMonth}
       $isHoliday={isHoliday}
+      $isInRange={isInRange}
       $isSelected={isSelected}
+      $isStartRange={isStartRange}
       $isToday={isToday}
       $isWeekend={isWeekend}
       onClick={onClick}
-      onContextMenu={isWithTodos ? handleOpen : undefined}
+      onContextMenu={isWithTodos ? handleOpenTodos : undefined}
     >
       {day}
       {isWithTodos && hasTodos && <StyledTodoMark></StyledTodoMark>}

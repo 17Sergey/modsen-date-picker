@@ -30,11 +30,3 @@ export function createDateFromInput(value: string): Date {
   const date = new Date(year, month - DATE_INDEX_OFFSET, day);
   return date;
 }
-
-// export function isInValidRange(value: string, minDate: Year, maxDate: Year) {
-//   const [day, month, year] = value.split("/").map(Number);
-//   const dateValue = new Date(year, month - DATE_INDEX_OFFSET, day);
-//   return (
-//     !isDateGreater(dateValue, maxDate) && !isDateGreater(minDate, dateValue)
-//   );
-// }

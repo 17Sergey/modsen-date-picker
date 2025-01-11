@@ -1,10 +1,10 @@
-import { DatePicker as Component } from "./DatePicker";
+import { DateRangePicker as Component } from "./DateRangePicker";
 
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Component> = {
   component: Component,
-  title: "DatePicker",
+  title: "DateRangePicker",
   tags: ["autodocs"],
   decorators: [
     (Story) => (
@@ -25,5 +25,6 @@ export const Default: Story = {
     onDateSelect: (date: Date) => {
       console.log("Selected date:", date.toJSON());
     },
+    withRangePicker: true,
   },
 };

@@ -14,12 +14,36 @@ const holiday = css`
   color: ${({ theme }) => theme.colors.holiday};
 `;
 
+const startRange = css`
+  ${selected}
+  border-radius: 0;
+  border-top-left-radius: ${({ theme }) => theme.paddings.sm};
+  border-bottom-left-radius: ${({ theme }) => theme.paddings.sm};
+  background-color: ${({ theme }) => theme.colors.primaryTransparent60};
+`;
+
+const endRange = css`
+  ${selected}
+  border-radius: 0;
+  border-top-right-radius: ${({ theme }) => theme.paddings.sm};
+  border-bottom-right-radius: ${({ theme }) => theme.paddings.sm};
+`;
+
+const inRange = css`
+  color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.primaryTransparent10};
+  border-radius: 0;
+`;
+
 interface DayProps {
   $isToday: boolean;
   $isWeekend: boolean;
   $isSelected: boolean;
   $isFromDifferentMonth: boolean;
   $isHoliday: boolean;
+  $isStartRange: boolean;
+  $isEndRange: boolean;
+  $isInRange: boolean;
 }
 
 export const StyledDay = styled.button<DayProps>`
@@ -51,6 +75,12 @@ export const StyledDay = styled.button<DayProps>`
   ${({ $isToday }) => $isToday && selected};
 
   ${({ $isSelected }) => $isSelected && selected};
+
+  ${({ $isStartRange }) => $isStartRange && startRange};
+
+  ${({ $isEndRange }) => $isEndRange && endRange};
+
+  ${({ $isInRange }) => $isInRange && inRange};
 `;
 
 export const StyledTodoMark = styled.div`

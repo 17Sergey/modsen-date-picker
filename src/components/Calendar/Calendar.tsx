@@ -10,6 +10,7 @@ import {
   isDayFromDifferentMonth,
   isDateHoliday,
   isSameDate,
+  isDateInRange,
 } from "@utils/helpers/otherFunctions";
 import { isWeekendDate } from "@utils/helpers/weekHelpers";
 
@@ -43,6 +44,7 @@ export interface CalendarProps {
   minYear?: Year;
   maxYear?: Year;
   withTodos?: boolean;
+  withRangePicker?: boolean;
 }
 
 export const Calendar: FC<CalendarProps> = ({
@@ -54,10 +56,14 @@ export const Calendar: FC<CalendarProps> = ({
   minYear = MIN_YEAR_VALUE,
   maxYear = MAX_YEAR_VALUE,
   withTodos = false,
+  withRangePicker = false,
 }) => {
   const [currentDate, setCurrentDate] = useState(initialDate);
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [showCalendar, setShowCalendar] = useState(false);
+
+  const [startRange, setStartRange] = useState<Date | null>(null);
+  const [endRange, setEndRange] = useState<Date | null>(null);
 
   const currentMonth = currentDate.getMonth();
   const currentYear = currentDate.getFullYear();
@@ -91,11 +97,32 @@ export const Calendar: FC<CalendarProps> = ({
   };
 
   const handleDateSelect = (date: Date) => {
-    setSelectedDate(date);
-    setCurrentDate(date);
+    if (!withRangePicker) {
+      setSelectedDate(date);
+      setCurrentDate(date);
+      return;
+    }
+
+    if (!startRange) {
+      setStartRange(date);
+    }
+
+    if (startRange && !endRange) {
+      if (date < startRange) {
+        setEndRange(startRange);
+        setStartRange(date);
+      } else {
+        setEndRange(date);
+      }
+    }
+
+    if (startRange && endRange) {
+      setStartRange(date);
+      setEndRange(null);
+    }
 
     if (onDateSelect) {
-      onDateSelect(date);
+      onDateSelect && onDateSelect(date);
     }
   };
 
@@ -104,23 +131,41 @@ export const Calendar: FC<CalendarProps> = ({
   };
 
   const handleClearDate = () => {
+    setStartRange(null);
+    setEndRange(null);
     setSelectedDate(null);
+  };
+
+  const pickDateControlProps = {
+    minYear,
+    maxYear,
+    onClear: handleClearDate,
+    onClick: toggleShowCalendar,
+    onDateInput: handleDateSelect,
   };
 
   useEffect(() => {
     setCurrentDate(initialDate);
   }, [initialDate]);
 
+  console.log(startRange?.toLocaleString(), endRange?.toLocaleString());
+
   return (
     <div>
-      <PickDateControl
-        maxYear={maxYear}
-        minYear={minYear}
-        selectedDate={selectedDate}
-        onClear={handleClearDate}
-        onClick={toggleShowCalendar}
-        onDateInput={handleDateSelect}
-      />
+      {withRangePicker ? (
+        <>
+          <PickDateControl
+            {...pickDateControlProps}
+            selectedDate={startRange}
+          />
+          <PickDateControl {...pickDateControlProps} selectedDate={endRange} />
+        </>
+      ) : (
+        <PickDateControl
+          {...pickDateControlProps}
+          selectedDate={selectedDate}
+        />
+      )}
       {showCalendar && (
         <StyledCalendarWrapper>
           <StyledCalendar>
@@ -140,11 +185,23 @@ export const Calendar: FC<CalendarProps> = ({
               {monthData.map((date) => {
                 const isWeekend = isWeekendDate(date);
                 const isSelected =
-                  !!selectedDate && isSameDate(date, selectedDate);
+                  !withRangePicker &&
+                  !!selectedDate &&
+                  isSameDate(date, selectedDate);
                 const isFromDifferentMonth = isDayFromDifferentMonth(
                   date,
                   currentDate,
                 );
+
+                const isStartRange =
+                  !!startRange && isSameDate(date, startRange);
+                const isEndRange = !!endRange && isSameDate(date, endRange);
+                const isInRange = Boolean(
+                  startRange &&
+                    endRange &&
+                    isDateInRange(date, startRange, endRange),
+                );
+
                 const isToday = isSameDate(date, today);
                 const isHoliday = holidays && isDateHoliday(date, holidays);
 
@@ -155,9 +212,12 @@ export const Calendar: FC<CalendarProps> = ({
                     <DayComponent
                       date={date}
                       day={date.getDate()}
+                      isEndRange={isEndRange}
                       isFromDifferentMonth={isFromDifferentMonth}
                       isHoliday={isHoliday}
+                      isInRange={isInRange}
                       isSelected={isSelected}
+                      isStartRange={isStartRange}
                       isToday={isToday}
                       isWeekend={isWeekend}
                       isWithTodos={withTodos}

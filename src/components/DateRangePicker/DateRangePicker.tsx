@@ -5,13 +5,13 @@ import ThemeWrapper from "@components/ThemeWrapper";
 import ErrorBoundary from "@components/ErrorBoundary";
 import { CalendarProps } from "@components/Calendar/Calendar";
 
-interface DatePickerProps extends CalendarProps {}
+interface DateRangePickerProps extends CalendarProps {}
 
-export const DatePicker: FC<DatePickerProps> = (props) => {
+export const DateRangePicker: FC<DateRangePickerProps> = (props) => {
   return (
     <ErrorBoundary>
       <ThemeWrapper>
-        <Calendar {...props} />
+        <Calendar {...props} withRangePicker={true} />
       </ThemeWrapper>
     </ErrorBoundary>
   );

@@ -19,6 +19,14 @@ export const isDateHoliday = (date: Date, holidays: Holiday[]): boolean => {
   return holidays.some((holiday) => isSameDate(date, holiday.date));
 };
 
+export const isDateInRange = (
+  dateToCheck: Date,
+  startDate: Date,
+  endDate: Date,
+) => {
+  return dateToCheck > startDate && dateToCheck < endDate;
+};
+
 export const formatDate = (date: Date | null): string | null => {
   if (date === null) return null;
 
