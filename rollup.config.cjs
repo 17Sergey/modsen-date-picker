@@ -6,6 +6,7 @@ import typescript from "@rollup/plugin-typescript";
 import alias from "@rollup/plugin-alias";
 import image from "@rollup/plugin-image";
 import url from "@rollup/plugin-url";
+import postcss from 'rollup-plugin-postcss';
 
 import path from "path";
 
@@ -20,7 +21,7 @@ export default {
       sourcemap: true,
     },
     {
-      file: "lib/index.es.js",
+      file: "lib/index.esm.js",
       format: "es",
       interop: "esModule",
       exports: "named",
@@ -28,6 +29,7 @@ export default {
     },
   ],
   plugins: [
+    postcss(),
     commonjs(),
     babel({
       exclude: "node_modules/**",
