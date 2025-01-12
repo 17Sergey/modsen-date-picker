@@ -1,6 +1,6 @@
 {
   "homepage": "https://github.com/17Sergey/modsen-date-picker",
-  "name": "@17sergey/modsen-datepicker-library",
+  "name": "@sergeykachaliuk/modsen-datepicker-library",
   "description": "Modsen Date picker library",
   "version": "1.1.1",
   "repository": "https://github.com/17Sergey/modsen-date-picker",
@@ -17,7 +17,7 @@
   },
   "scripts": {
     "dev": "rollup -c --watch",
-    "build": "rollup -c",
+    "build": "rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",

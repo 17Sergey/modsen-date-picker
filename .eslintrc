@@ -34,22 +34,12 @@
         "newlines-between": "always",
         "pathGroups": [
           {
-            "pattern": "@providers/**",
-            "group": "internal",
-            "position": "after"
-          },
-          {
-            "pattern": "@decorators/**",
-            "group": "internal",
-            "position": "after"
-          },
-          {
             "pattern": "@components/**",
             "group": "internal",
             "position": "after"
           },
           {
-            "pattern": "@hooks/**",
+            "pattern": "@decorators/**",
             "group": "internal",
             "position": "after"
           },

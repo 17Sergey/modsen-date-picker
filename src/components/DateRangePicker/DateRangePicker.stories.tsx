@@ -21,10 +21,19 @@ type Story = StoryObj<typeof Component>;
 
 export const Default: Story = {
   args: {
-    initialDate: new Date(),
+    dateSelected: new Date(),
+    rangeStart: new Date(),
+    rangeEnd: new Date(2025, 0, 13),
+    withRangePicker: true,
+
     onDateSelect: (date: Date) => {
       console.log("Selected date:", date.toJSON());
     },
-    withRangePicker: true,
+    onRangeStartSelect: (date: Date) => {
+      console.log("Range start date:", date.toJSON());
+    },
+    onRangeEndSelect: (date: Date) => {
+      console.log("Range end date:", date.toJSON());
+    },
   },
 };

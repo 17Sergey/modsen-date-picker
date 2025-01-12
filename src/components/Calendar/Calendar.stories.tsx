@@ -1,5 +1,5 @@
 import withHolidays from "@decorators/withHolidays";
-import withClearButton from "@decorators/withHolidays copy";
+import withClearButton from "@decorators/withClearButton";
 
 import { Calendar, Calendar as Component } from "./Calendar";
 
@@ -24,7 +24,7 @@ type Story = StoryObj<typeof Component>;
 
 export const Default: Story = {
   args: {
-    initialDate: new Date(),
+    dateSelected: new Date(),
     onDateSelect: (date: Date) => {
       console.log("Selected date:", date.getDate());
     },
@@ -45,7 +45,7 @@ export const WithClearButton: Story = {
 
 export const WithTodos: Story = {
   args: {
-    initialDate: new Date(),
+    dateSelected: new Date(),
     onDateSelect: (date: Date) => {
       console.log("Selected date:", date);
     },

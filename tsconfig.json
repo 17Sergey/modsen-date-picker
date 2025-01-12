@@ -23,8 +23,6 @@
       "@components/*": ["./src/components/*"],
       "@constants/*": ["./src/constants/*"],
       "@decorators/*": ["./src/decorators/*"],
-      "@hooks/*": ["./src/hooks/*"],
-      "@providers/*": ["./src/providers/*"],
       "@utils/*": ["./src/utils/*"],
       "@styles/*": ["./src/styles/*"],
       "@types/*": ["./src/types/*"]

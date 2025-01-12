@@ -4,6 +4,8 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "@styles/globalStyles";
 import { lightTheme } from "@styles/theme";
 
+import "@styles/Font.css";
+
 const ThemeWrapper: FC<PropsWithChildren> = ({ children }) => (
   <ThemeProvider theme={lightTheme}>
     <GlobalStyles />

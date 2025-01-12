@@ -14,3 +14,5 @@ interface Todo {
   text: string;
   date: string;
 }
+
+type DateCallback = (date: Date) => void;

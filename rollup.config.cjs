@@ -7,6 +7,8 @@ import alias from "@rollup/plugin-alias";
 import image from "@rollup/plugin-image";
 import url from "@rollup/plugin-url";
 
+import path from "path";
+
 export default {
   input: "src/index.ts",
   output: [
@@ -47,7 +49,24 @@ export default {
     url(),
     image(),
     alias({
-      entries: [{ find: "@", replacement: "./src" }],
+      entries: [
+        { find: "@assets", replacement: path.resolve(__dirname, "src/assets") },
+        {
+          find: "@components",
+          replacement: path.resolve(__dirname, "src/components"),
+        },
+        {
+          find: "@constants",
+          replacement: path.resolve(__dirname, "src/constants"),
+        },
+        {
+          find: "@decorators",
+          replacement: path.resolve(__dirname, "src/decorators"),
+        },
+        { find: "@utils", replacement: path.resolve(__dirname, "src/utils") },
+        { find: "@styles", replacement: path.resolve(__dirname, "src/styles") },
+        { find: "@types", replacement: path.resolve(__dirname, "src/types") },
+      ],
     }),
     typescript({ tsconfig: "./tsconfig.json" }),
     terser(),

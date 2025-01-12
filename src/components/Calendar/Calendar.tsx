@@ -1,8 +1,8 @@
 import { FC, useState, useEffect } from "react";
 
-import { DECORATORS } from "@decorators/index";
-
 import PickDateControl from "@components/PickDateControl";
+
+import { DECORATORS } from "@decorators/index";
 
 import { getNextMonth, getPreviousMonth } from "@utils/helpers/monthHelpers";
 import { buildMonthData } from "@utils/helpers/datesBuilding/buildMonthData";
@@ -36,34 +36,51 @@ import Year from "./Year";
 import Month from "./Month";
 
 export interface CalendarProps {
-  initialDate?: Date;
-  onDateSelect?: (date: Date) => void;
+  dateSelected?: Date;
+  rangeStart?: Date;
+  rangeEnd?: Date;
+
+  onDateSelect?: DateCallback;
+  onRangeStartSelect?: DateCallback;
+  onRangeEndSelect?: DateCallback;
+
   withClearButton?: boolean;
-  holidays?: Holiday[];
   weekStartsFromMonday?: boolean;
-  minYear?: Year;
-  maxYear?: Year;
   withTodos?: boolean;
   withRangePicker?: boolean;
+
+  holidays?: Holiday[];
+  minYear?: Year;
+  maxYear?: Year;
 }
 
+const today = new Date();
+const defaultCallback = () => {};
+
 export const Calendar: FC<CalendarProps> = ({
-  initialDate = new Date(),
-  onDateSelect,
-  withClearButton = false,
+  dateSelected = today,
+  rangeStart = null,
+  rangeEnd = null,
+
+  onDateSelect = defaultCallback,
+  onRangeStartSelect = defaultCallback,
+  onRangeEndSelect = defaultCallback,
+
   weekStartsFromMonday = true,
-  holidays,
-  minYear = MIN_YEAR_VALUE,
-  maxYear = MAX_YEAR_VALUE,
+  withClearButton = false,
   withTodos = false,
   withRangePicker = false,
+
+  holidays = [],
+  minYear = MIN_YEAR_VALUE,
+  maxYear = MAX_YEAR_VALUE,
 }) => {
-  const [currentDate, setCurrentDate] = useState(initialDate);
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [currentDate, setCurrentDate] = useState(today);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(dateSelected);
   const [showCalendar, setShowCalendar] = useState(false);
 
-  const [startRange, setStartRange] = useState<Date | null>(null);
-  const [endRange, setEndRange] = useState<Date | null>(null);
+  const [startRange, setStartRange] = useState<Date | null>(rangeStart);
+  const [endRange, setEndRange] = useState<Date | null>(rangeEnd);
 
   const currentMonth = currentDate.getMonth();
   const currentYear = currentDate.getFullYear();
@@ -74,7 +91,6 @@ export const Calendar: FC<CalendarProps> = ({
   );
 
   const monthName = MONTH_NAMES[currentMonth];
-  const today = new Date();
 
   const WEEK_DAYS = weekStartsFromMonday
     ? WEEK_DAYS_FROM_MONDAY
@@ -105,25 +121,31 @@ export const Calendar: FC<CalendarProps> = ({
 
     if (!startRange) {
       setStartRange(date);
+      onRangeStartSelect(date);
     }
 
     if (startRange && !endRange) {
       if (date < startRange) {
         setEndRange(startRange);
         setStartRange(date);
+
+        onRangeStartSelect(date);
+        onRangeEndSelect(startRange);
       } else {
         setEndRange(date);
+
+        onRangeEndSelect(date);
       }
     }
 
     if (startRange && endRange) {
       setStartRange(date);
       setEndRange(null);
+
+      onRangeStartSelect(date);
     }
 
-    if (onDateSelect) {
-      onDateSelect && onDateSelect(date);
-    }
+    onDateSelect(date);
   };
 
   const toggleShowCalendar = () => {
@@ -145,10 +167,16 @@ export const Calendar: FC<CalendarProps> = ({
   };
 
   useEffect(() => {
-    setCurrentDate(initialDate);
-  }, [initialDate]);
+    setCurrentDate(dateSelected);
+  }, [dateSelected]);
 
-  console.log(startRange?.toLocaleString(), endRange?.toLocaleString());
+  useEffect(() => {
+    setStartRange(rangeStart);
+  }, [rangeStart]);
+
+  useEffect(() => {
+    setEndRange(rangeEnd);
+  }, [rangeEnd]);
 
   return (
     <div>

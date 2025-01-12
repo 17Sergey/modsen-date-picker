@@ -21,7 +21,7 @@ type Story = StoryObj<typeof Component>;
 
 export const Default: Story = {
   args: {
-    initialDate: new Date(),
+    dateSelected: new Date(2025, 0, 13),
     onDateSelect: (date: Date) => {
       console.log("Selected date:", date.toJSON());
     },
