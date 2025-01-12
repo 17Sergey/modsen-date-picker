@@ -7,12 +7,10 @@ import { CalendarProps } from "@components/Calendar/Calendar";
 
 interface DatePickerProps extends CalendarProps {}
 
-export const DatePicker: FC<DatePickerProps> = (props) => {
-  return (
-    <ErrorBoundary>
-      <ThemeWrapper>
-        <Calendar {...props} />
-      </ThemeWrapper>
-    </ErrorBoundary>
-  );
-};
+export const DatePicker: FC<DatePickerProps> = (props) => (
+  <ErrorBoundary>
+    <ThemeWrapper>
+      <Calendar {...props} />
+    </ThemeWrapper>
+  </ErrorBoundary>
+);

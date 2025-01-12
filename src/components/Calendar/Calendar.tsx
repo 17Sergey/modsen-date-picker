@@ -116,6 +116,7 @@ export const Calendar: FC<CalendarProps> = ({
     if (!withRangePicker) {
       setSelectedDate(date);
       setCurrentDate(date);
+      onDateSelect(date);
       return;
     }
 

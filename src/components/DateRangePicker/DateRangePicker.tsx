@@ -7,12 +7,10 @@ import { CalendarProps } from "@components/Calendar/Calendar";
 
 interface DateRangePickerProps extends CalendarProps {}
 
-export const DateRangePicker: FC<DateRangePickerProps> = (props) => {
-  return (
-    <ErrorBoundary>
-      <ThemeWrapper>
-        <Calendar {...props} withRangePicker={true} />
-      </ThemeWrapper>
-    </ErrorBoundary>
-  );
-};
+export const DateRangePicker: FC<DateRangePickerProps> = (props) => (
+  <ErrorBoundary>
+    <ThemeWrapper>
+      <Calendar {...props} withRangePicker={true} />
+    </ThemeWrapper>
+  </ErrorBoundary>
+);
