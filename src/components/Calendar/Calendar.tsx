@@ -145,8 +145,6 @@ export const Calendar: FC<CalendarProps> = ({
 
       onRangeStartSelect(date);
     }
-
-    onDateSelect(date);
   };
 
   const toggleShowCalendar = () => {
