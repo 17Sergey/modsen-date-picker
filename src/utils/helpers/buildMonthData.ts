@@ -9,7 +9,7 @@ import {
   getNextMonth,
   getPreviousMonth,
   getWeekDayOfMonthFirstDay,
-} from "../monthHelpers";
+} from "./monthHelpers";
 
 export const buildMonthData = (
   monthNumber: number,

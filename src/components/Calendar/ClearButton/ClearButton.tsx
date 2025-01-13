@@ -10,6 +10,4 @@ interface ClearButtonProps {
 export const ClearButton: FC<ClearButtonProps> = ({
   onClick,
   caption = "Clear",
-}) => {
-  return <StyledClearButton onClick={onClick}>{caption}</StyledClearButton>;
-};
+}) => <StyledClearButton onClick={onClick}>{caption}</StyledClearButton>;

@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { CalendarProps } from "@components/Calendar/Calendar";
+import { CalendarProps } from "@components/Calendar/Calendar.types";
 
 const holidays: Holiday[] = [
   {

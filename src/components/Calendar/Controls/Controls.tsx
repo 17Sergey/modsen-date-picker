@@ -11,16 +11,14 @@ interface ControlsProps extends PropsWithChildren {
   onPrev: VoidFunction;
 }
 
-export const Controls: FC<ControlsProps> = ({ onNext, onPrev, children }) => {
-  return (
-    <StyledWrapper>
-      <IconButton aria-label="Previous month" onClick={onPrev}>
-        <PrevArrow alt="Previous month" />
-      </IconButton>
-      {children}
-      <IconButton aria-label="Next month" onClick={onNext}>
-        <NextArrow alt="Next month" />
-      </IconButton>
-    </StyledWrapper>
-  );
-};
+export const Controls: FC<ControlsProps> = ({ onNext, onPrev, children }) => (
+  <StyledWrapper>
+    <IconButton aria-label="Previous month" onClick={onPrev}>
+      <PrevArrow alt="Previous month" />
+    </IconButton>
+    {children}
+    <IconButton aria-label="Next month" onClick={onNext}>
+      <NextArrow alt="Next month" />
+    </IconButton>
+  </StyledWrapper>
+);

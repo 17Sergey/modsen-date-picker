@@ -2,9 +2,7 @@ import { ComponentProps, FC } from "react";
 
 import { StyledButton } from "./IconButton.styled";
 
-export interface IconButtonProps extends ComponentProps<"button"> {}
-
-export const IconButton: FC<IconButtonProps> = ({
+export const IconButton: FC<ComponentProps<"button">> = ({
   onClick,
   children,
   ...props

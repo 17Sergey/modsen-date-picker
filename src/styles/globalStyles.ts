@@ -22,7 +22,6 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   font-family: ${({ theme }) => theme.fonts.primary}, sans-serif;
-  /* font-family: sans-serif; */
   font-size: ${({ theme }) => theme.fonts.size.base};
   font-weight: ${({ theme }) => theme.fonts.weight.light};
   color: ${({ theme }) => theme.colors.textDefault}; 

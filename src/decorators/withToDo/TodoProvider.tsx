@@ -12,12 +12,6 @@ import {
   setToLocalStorage,
 } from "@utils/helpers/localStorage";
 
-interface Todo {
-  id: number;
-  text: string;
-  date: string;
-}
-
 interface TodoContextType {
   todos: Todo[];
   date: string;
@@ -25,11 +19,11 @@ interface TodoContextType {
   removeTodo: (id: number) => void;
 }
 
-const TodoContext = createContext<TodoContextType | undefined>(undefined);
-
 interface TodoProviderProps extends PropsWithChildren {
   date: string;
 }
+
+const TodoContext = createContext<TodoContextType | undefined>(undefined);
 
 export const TodoProvider: FC<TodoProviderProps> = ({ children, date }) => {
   const [todos, setTodos] = useState<Todo[]>(() => {

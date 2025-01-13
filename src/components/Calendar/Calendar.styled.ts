@@ -16,20 +16,3 @@ export const StyledCalendar = styled.div`
 
   background: ${({ theme }) => theme.colors.background};
 `;
-
-export const StyledWeekDaysList = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-
-  margin: ${({ theme }) => theme.margins.base} 0
-    ${({ theme }) => theme.margins.sm};
-`;
-
-export const StyledWeekDayItem = styled.li`
-  text-align: center;
-`;
-
-export const StyledDatesList = styled.ul`
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-`;

@@ -1,3 +1,5 @@
+import { EMPTY_CALLBACK, TODAY } from "@constants/constants";
+
 import Month from "../Month";
 import Year from "../Year";
 
@@ -18,11 +20,10 @@ type Story = StoryObj<typeof Component>;
 export const Default: Story = {
   args: {},
   render: () => {
-    const emptyFn = () => {};
     return (
-      <Controls onNext={emptyFn} onPrev={emptyFn}>
+      <Controls onNext={EMPTY_CALLBACK} onPrev={EMPTY_CALLBACK}>
         <div>
-          <Month month={"January"} /> <Year year={new Date().getFullYear()} />
+          <Month month={"January"} /> <Year year={TODAY.getFullYear()} />
         </div>
       </Controls>
     );

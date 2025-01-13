@@ -1,23 +1,7 @@
 import { FC, MouseEvent } from "react";
 
 import { StyledDay, StyledTodoMark } from "./Day.styled";
-
-export interface DayProps {
-  day: number;
-  date: Date;
-  onClick: VoidFunction;
-  isToday?: boolean;
-  isWeekend?: boolean;
-  isSelected?: boolean;
-  isFromDifferentMonth?: boolean;
-  isHoliday?: boolean;
-  isWithTodos?: boolean;
-  isStartRange?: boolean;
-  isEndRange?: boolean;
-  isInRange?: boolean;
-  hasTodos?: boolean;
-  onOpenTodos?: VoidFunction;
-}
+import { DayProps } from "./Day.types";
 
 export const Day: FC<DayProps> = ({
   day,

@@ -10,6 +10,7 @@ const Configuration = {
         "build",
         "setup",
         "ci",
+        "cd",
         "docs",
         "feat",
         "fix",

@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 
+import { StyledDayProps } from "./Day.types";
+
 const selected = css`
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.textPrimary};
@@ -35,18 +37,7 @@ const inRange = css`
   border-radius: 0;
 `;
 
-interface DayProps {
-  $isToday: boolean;
-  $isWeekend: boolean;
-  $isSelected: boolean;
-  $isFromDifferentMonth: boolean;
-  $isHoliday: boolean;
-  $isStartRange: boolean;
-  $isEndRange: boolean;
-  $isInRange: boolean;
-}
-
-export const StyledDay = styled.button<DayProps>`
+export const StyledDay = styled.button<StyledDayProps>`
   width: 100%;
   background-color: ${({ theme }) => theme.colors.background};
 

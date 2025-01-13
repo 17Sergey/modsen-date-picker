@@ -51,24 +51,28 @@ export const PickDateControl: FC<PickDateControlProps> = ({
 
     if (isValidDate(value, minYear, maxYear)) {
       const date = createDateFromInput(value);
-      onDateInput(date);
-
       setIsValid(true);
+
+      onDateInput(date);
     }
   };
 
   const handleClear = () => {
     setInputValue("");
-    onClear();
     setIsValid(true);
+
+    onClear();
   };
 
   useEffect(() => {
-    if (selectedDate) {
-      const formattedDate = formatDate(selectedDate) as string;
-      setInputValue(formattedDate);
-      setIsValid(true);
+    if (!selectedDate) {
+      setInputValue("");
+      return;
     }
+
+    const formattedDate = formatDate(selectedDate) as string;
+    setInputValue(formattedDate);
+    setIsValid(true);
   }, [selectedDate]);
 
   return (
@@ -83,7 +87,7 @@ export const PickDateControl: FC<PickDateControlProps> = ({
         value={inputValue}
         onChange={handleInputChange}
       />
-      {selectedDate && (
+      {inputValue && (
         <StyledClearButton>
           <IconButton onClick={handleClear}>
             <Clear />

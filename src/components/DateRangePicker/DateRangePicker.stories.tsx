@@ -1,3 +1,5 @@
+import { TODAY } from "@constants/constants";
+
 import { DateRangePicker as Component } from "./DateRangePicker";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -21,9 +23,8 @@ type Story = StoryObj<typeof Component>;
 
 export const Default: Story = {
   args: {
-    dateSelected: new Date(),
-    rangeStart: new Date(),
-    rangeEnd: new Date(2025, 0, 13),
+    rangeStart: TODAY,
+    rangeEnd: TODAY,
     withRangePicker: true,
 
     onDateSelect: (date: Date) => {

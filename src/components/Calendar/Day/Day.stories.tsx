@@ -27,41 +27,41 @@ type Story = StoryObj<typeof Component>;
 
 export const Default: Story = {
   args: {
-    day: 9,
+    day: new Date().getDate(),
   },
 };
 
 export const FromDifferentMonth: Story = {
   args: {
-    day: 9,
+    day: new Date().getDate(),
     isFromDifferentMonth: true,
   },
 };
 
 export const Holiday: Story = {
   args: {
-    day: 9,
+    day: new Date().getDate(),
     isHoliday: true,
   },
 };
 
 export const Selected: Story = {
   args: {
-    day: 9,
+    day: new Date().getDate(),
     isSelected: true,
   },
 };
 
 export const Today: Story = {
   args: {
-    day: 9,
+    day: new Date().getDate(),
     isToday: true,
   },
 };
 
 export const Weekend: Story = {
   args: {
-    day: 9,
+    day: new Date().getDate(),
     isWeekend: true,
   },
 };

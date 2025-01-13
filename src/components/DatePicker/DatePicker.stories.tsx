@@ -1,3 +1,5 @@
+import { TODAY } from "@constants/constants";
+
 import { DatePicker as Component } from "./DatePicker";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -21,7 +23,7 @@ type Story = StoryObj<typeof Component>;
 
 export const Default: Story = {
   args: {
-    dateSelected: new Date(2025, 0, 13),
+    dateSelected: TODAY,
     onDateSelect: (date: Date) => {
       console.log("Selected date:", date.toJSON());
     },

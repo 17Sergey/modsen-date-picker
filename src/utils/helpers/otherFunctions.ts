@@ -1,4 +1,8 @@
-import { DATE_INDEX_OFFSET } from "@constants/calendar";
+import {
+  DATE_INDEX_OFFSET,
+  SATURDAY_INDEX,
+  SUNDAY_INDEX,
+} from "@constants/calendar";
 
 export const isSameDate = (firstDate: Date, secondDate: Date): boolean => {
   return (
@@ -17,6 +21,10 @@ export const isDayFromDifferentMonth = (
 
 export const isDateHoliday = (date: Date, holidays: Holiday[]): boolean => {
   return holidays.some((holiday) => isSameDate(date, holiday.date));
+};
+
+export const isWeekendDate = (date: Date): boolean => {
+  return date.getDay() === SUNDAY_INDEX || date.getDay() === SATURDAY_INDEX;
 };
 
 export const isDateInRange = (

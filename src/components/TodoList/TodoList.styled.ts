@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Z_INDEX_MANAGER } from "./../../constants/constants";
+import { Z_INDEX_MANAGER } from "@constants/constants";
 
 export const StyledContainer = styled.div`
   padding: ${({ theme }) => theme.paddings.base};

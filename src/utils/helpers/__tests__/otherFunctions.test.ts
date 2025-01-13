@@ -4,6 +4,7 @@ import {
   isDateHoliday,
   isDateInRange,
   formatDate,
+  isWeekendDate,
 } from "../otherFunctions";
 
 describe("isSameDate", () => {
@@ -84,6 +85,33 @@ describe("isDateInRange", () => {
     const startDate = new Date("2025-01-01");
     const endDate = new Date("2025-01-31");
     expect(isDateInRange(dateToCheck, startDate, endDate)).toBe(false);
+  });
+});
+
+describe("isWeekendDate", () => {
+  it("should return true for Saturday", () => {
+    const date = new Date("2023-01-07"); // Saturday
+    expect(isWeekendDate(date)).toBe(true);
+  });
+
+  it("should return true for Sunday", () => {
+    const date = new Date("2023-01-08"); // Sunday
+    expect(isWeekendDate(date)).toBe(true);
+  });
+
+  it("should return false for Monday", () => {
+    const date = new Date("2023-01-09"); // Monday
+    expect(isWeekendDate(date)).toBe(false);
+  });
+
+  it("should return false for Friday", () => {
+    const date = new Date("2023-01-06"); // Friday
+    expect(isWeekendDate(date)).toBe(false);
+  });
+
+  it("should return false for a non-weekend date", () => {
+    const date = new Date("2023-01-10"); // Tuesday
+    expect(isWeekendDate(date)).toBe(false);
   });
 });
 

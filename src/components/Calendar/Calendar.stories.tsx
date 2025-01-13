@@ -1,6 +1,8 @@
 import withHolidays from "@decorators/withHolidays";
 import withClearButton from "@decorators/withClearButton";
 
+import { TODAY } from "@constants/constants";
+
 import { Calendar, Calendar as Component } from "./Calendar";
 
 import type { Meta, StoryObj } from "@storybook/react";
@@ -24,7 +26,7 @@ type Story = StoryObj<typeof Component>;
 
 export const Default: Story = {
   args: {
-    dateSelected: new Date(),
+    dateSelected: TODAY,
     onDateSelect: (date: Date) => {
       console.log("Selected date:", date.getDate());
     },
@@ -45,7 +47,7 @@ export const WithClearButton: Story = {
 
 export const WithTodos: Story = {
   args: {
-    dateSelected: new Date(),
+    dateSelected: TODAY,
     onDateSelect: (date: Date) => {
       console.log("Selected date:", date);
     },
