@@ -14,11 +14,11 @@ interface ControlsProps extends PropsWithChildren {
 export const Controls: FC<ControlsProps> = ({ onNext, onPrev, children }) => {
   return (
     <StyledWrapper>
-      <IconButton onClick={onPrev}>
+      <IconButton aria-label="Previous month" onClick={onPrev}>
         <PrevArrow alt="Previous month" />
       </IconButton>
       {children}
-      <IconButton onClick={onNext}>
+      <IconButton aria-label="Next month" onClick={onNext}>
         <NextArrow alt="Next month" />
       </IconButton>
     </StyledWrapper>

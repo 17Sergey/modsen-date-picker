@@ -46,19 +46,3 @@ export function getWeekDayOfMonthFirstDay(year: number, month: number) {
 
   return dayOfWeek;
 }
-
-export const getLastDayOfPreviousMonth = (currentDate: Date) => {
-  let year = currentDate.getFullYear();
-  const month = currentDate.getMonth();
-
-  let PREV_MONTH = month - 1;
-
-  if (PREV_MONTH === -1) {
-    PREV_MONTH = MONTHS.December;
-    year--;
-  }
-
-  const lastDayOfPreviousMonth = new Date(year, PREV_MONTH, FLAG_FOR_LAST_DAY);
-
-  return lastDayOfPreviousMonth;
-};

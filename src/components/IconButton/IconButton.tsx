@@ -1,12 +1,17 @@
-import { FC, ReactNode } from "react";
+import { ComponentProps, FC } from "react";
 
 import { StyledButton } from "./IconButton.styled";
 
-interface IconButtonProps {
-  onClick: VoidFunction;
-  children: ReactNode;
-}
+export interface IconButtonProps extends ComponentProps<"button"> {}
 
-export const IconButton: FC<IconButtonProps> = ({ onClick, children }) => {
-  return <StyledButton onClick={onClick}>{children}</StyledButton>;
+export const IconButton: FC<IconButtonProps> = ({
+  onClick,
+  children,
+  ...props
+}) => {
+  return (
+    <StyledButton onClick={onClick} {...props}>
+      {children}
+    </StyledButton>
+  );
 };
