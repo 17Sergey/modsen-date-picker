@@ -32,7 +32,6 @@ export const useDateSelection = (
 
   const handleDateSelect = (date: Date) => {
     setSelectedDate(date);
-    setCurrentDate(date);
 
     onDateSelect(date);
   };
