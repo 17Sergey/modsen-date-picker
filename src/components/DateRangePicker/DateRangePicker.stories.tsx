@@ -23,7 +23,7 @@ type Story = StoryObj<typeof Component>;
 
 export const Default: Story = {
   args: {
-    rangeStart: TODAY,
+    rangeStart: new Date(2025, 0, 16),
     rangeEnd: TODAY,
     withRangePicker: true,
 

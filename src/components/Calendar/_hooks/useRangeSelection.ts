@@ -60,10 +60,22 @@ export const useRangeSelection = (
 
   useEffect(() => {
     setStartRange(rangeStart);
+
+    if (rangeStart && rangeEnd && rangeStart > rangeEnd) {
+      setStartRange(rangeEnd);
+    } else {
+      setStartRange(rangeStart);
+    }
   }, [rangeStart]);
 
   useEffect(() => {
     setEndRange(rangeEnd);
+
+    if (rangeStart && rangeEnd && rangeStart > rangeEnd) {
+      setEndRange(rangeStart);
+    } else {
+      setEndRange(rangeEnd);
+    }
   }, [rangeEnd]);
 
   return {

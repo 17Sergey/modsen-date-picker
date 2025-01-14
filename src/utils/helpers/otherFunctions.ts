@@ -32,7 +32,12 @@ export const isDateInRange = (
   startDate: Date,
   endDate: Date,
 ) => {
-  return dateToCheck > startDate && dateToCheck < endDate;
+  return (
+    !isSameDate(dateToCheck, startDate) &&
+    !isSameDate(dateToCheck, endDate) &&
+    dateToCheck > startDate &&
+    dateToCheck < endDate
+  );
 };
 
 export const formatDate = (date: Date | null): string | null => {

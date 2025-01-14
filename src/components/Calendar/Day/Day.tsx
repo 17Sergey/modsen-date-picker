@@ -22,6 +22,7 @@ export const Day: FC<DayProps> = ({
     e.preventDefault();
     onOpenTodos();
   };
+
   return (
     <StyledDay
       $isEndRange={isEndRange}

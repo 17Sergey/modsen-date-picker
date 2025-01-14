@@ -42,6 +42,7 @@ export const DatesGrid: FC<DatesGridProps> = ({
 
         const isStartRange = !!startRange && isSameDate(date, startRange);
         const isEndRange = !!endRange && isSameDate(date, endRange);
+
         const isInRange = Boolean(
           startRange && endRange && isDateInRange(date, startRange, endRange),
         );
