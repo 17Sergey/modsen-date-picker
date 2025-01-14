@@ -2,7 +2,7 @@
   "homepage": "https://github.com/17Sergey/modsen-date-picker",
   "name": "@sergeykachaliuk/modsen-datepicker-library",
   "description": "Modsen Date picker library",
-  "version": "1.1.4",
+  "version": "1.2.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/17Sergey/modsen-date-picker.git"
@@ -94,7 +94,7 @@
     "react-dom": "^18.2.0",
     "rollup": "^4.29.1",
     "rollup-plugin-copy-assets": "^2.0.3",
-    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-module-replacement": "^1.2.1",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-svg": "^2.0.0",

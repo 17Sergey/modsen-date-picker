@@ -15,7 +15,6 @@ import Month from "./Month";
 import WeekDays from "./WeekDays";
 import DatesGrid from "./DatesGrid";
 import PickDateControl from "./PickDateControl";
-import { CalendarProps } from "./Calendar.types";
 import { useRangeSelection } from "./_hooks/useRangeSelection";
 import { useDateSelection } from "./_hooks/useDateSelection";
 import { useCalendarVisibility } from "./_hooks/useCalendarVisibility";

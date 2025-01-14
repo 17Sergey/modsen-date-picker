@@ -6,7 +6,7 @@ import typescript from "@rollup/plugin-typescript";
 import alias from "@rollup/plugin-alias";
 import image from "@rollup/plugin-image";
 import url from "@rollup/plugin-url";
-import postcss from 'rollup-plugin-postcss';
+import postcss from "rollup-plugin-postcss";
 
 import path from "path";
 
@@ -52,7 +52,10 @@ export default {
     image(),
     alias({
       entries: [
-        { find: "@assets", replacement: path.resolve(__dirname, "src/assets") },
+        {
+          find: "@assets",
+          replacement: path.resolve(__dirname, "src/assets"),
+        },
         {
           find: "@components",
           replacement: path.resolve(__dirname, "src/components"),
@@ -66,7 +69,10 @@ export default {
           replacement: path.resolve(__dirname, "src/decorators"),
         },
         { find: "@utils", replacement: path.resolve(__dirname, "src/utils") },
-        { find: "@styles", replacement: path.resolve(__dirname, "src/styles") },
+        {
+          find: "@styles",
+          replacement: path.resolve(__dirname, "src/styles"),
+        },
         { find: "@types", replacement: path.resolve(__dirname, "src/types") },
       ],
     }),
