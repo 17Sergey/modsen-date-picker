@@ -5,6 +5,8 @@ import Clear from "@components/Icons/Clear";
 
 import { useTodo } from "@decorators/withToDo/TodoProvider";
 
+import { DATA_TEST_ID } from "@constants/constants";
+
 import TodoItem from "./TodoItem";
 import {
   StyledButton,
@@ -41,9 +43,14 @@ export const TodoList: FC<TodoListProps> = ({ onCloseTodos }) => {
 
   return (
     <StyledContainer>
-      <StyledTitle>Todo List {date}</StyledTitle>
+      <StyledTitle data-testid={DATA_TEST_ID.TODO_LIST}>
+        Todo List {date}
+      </StyledTitle>
       <StyledCloseButton>
-        <IconButton onClick={onCloseTodos}>
+        <IconButton
+          data-testid={DATA_TEST_ID.CLOSE_TODOLIST}
+          onClick={onCloseTodos}
+        >
           <Clear />
         </IconButton>
       </StyledCloseButton>

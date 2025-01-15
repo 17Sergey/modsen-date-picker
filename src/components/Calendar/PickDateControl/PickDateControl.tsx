@@ -11,6 +11,8 @@ import {
   createDateFromInput,
 } from "@utils/helpers/dateInput";
 
+import { DATA_TEST_ID } from "@constants/constants";
+
 import {
   StyledDateInput,
   StyledDateIcon,
@@ -76,9 +78,16 @@ export const PickDateControl: FC<PickDateControlProps> = ({
   }, [selectedDate]);
 
   return (
-    <StyledDateInput $isValid={isValid}>
+    <StyledDateInput
+      $isValid={isValid}
+      data-testid={DATA_TEST_ID.PICK_DATE_CONTROL}
+    >
       <StyledDateIcon>
-        <IconButton onClick={onClick}>
+        <IconButton
+          aria-label="Toggle calendar"
+          data-testid={DATA_TEST_ID.TOGGLE_CALENDAR}
+          onClick={onClick}
+        >
           <Calendar />
         </IconButton>
       </StyledDateIcon>

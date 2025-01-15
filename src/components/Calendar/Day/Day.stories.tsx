@@ -59,9 +59,21 @@ export const Today: Story = {
   },
 };
 
-export const Weekend: Story = {
+export const RangeStart: Story = {
   args: {
     day: new Date().getDate(),
-    isWeekend: true,
+    isStartRange: true,
+  },
+};
+export const RangeEnd: Story = {
+  args: {
+    day: new Date().getDate(),
+    isEndRange: true,
+  },
+};
+export const InRange: Story = {
+  args: {
+    day: new Date().getDate(),
+    isInRange: true,
   },
 };

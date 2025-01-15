@@ -33,8 +33,10 @@ const endRange = css`
 
 const inRange = css`
   color: ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme }) => theme.colors.primaryTransparent10};
   border-radius: 0;
+
+  background-color: ${({ theme }) =>
+    theme.colors.primaryTransparent10} !important;
 `;
 
 export const StyledDay = styled.button<StyledDayProps>`

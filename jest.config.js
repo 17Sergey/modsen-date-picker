@@ -14,6 +14,7 @@ module.exports = {
     "^.+\\.(js|jsx|ts|tsx)$": "babel-jest",
   },
   moduleNameMapper: {
+    "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/src/utils/testing/imgSrcMock.ts",
     "\\.(css|less|sass|scss)$": "identity-obj-proxy",
     "^@assets/(.*)$": "<rootDir>/src/assets/$1",
     "^@components/(.*)$": "<rootDir>/src/components/$1",
@@ -24,4 +25,3 @@ module.exports = {
     "^@types/(.*)$": "<rootDir>/src/types/$1",
   },
 };
-

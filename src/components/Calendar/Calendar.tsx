@@ -19,6 +19,7 @@ import { useRangeSelection } from "./_hooks/useRangeSelection";
 import { useDateSelection } from "./_hooks/useDateSelection";
 import { useCalendarVisibility } from "./_hooks/useCalendarVisibility";
 import { useBuildDates } from "./_hooks/useBuildDates";
+import { CalendarProps } from "./Calendar.types";
 
 export const Calendar: FC<CalendarProps> = ({
   dateSelected = TODAY,

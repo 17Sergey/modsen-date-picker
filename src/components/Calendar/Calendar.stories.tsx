@@ -54,3 +54,13 @@ export const WithTodos: Story = {
     withTodos: true,
   },
 };
+
+export const WeekStartFromSunday: Story = {
+  args: {
+    dateSelected: TODAY,
+    onDateSelect: (date: Date) => {
+      console.log("Selected date:", date);
+    },
+    weekStartsFromMonday: false,
+  },
+};

@@ -38,3 +38,11 @@ export const Default: Story = {
     },
   },
 };
+
+export const WithNoDefaultRange: Story = {
+  args: {
+    rangeStart: undefined,
+    rangeEnd: undefined,
+    withRangePicker: undefined,
+  },
+};

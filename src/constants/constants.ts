@@ -20,3 +20,14 @@ export const Z_INDEX_MANAGER = {
 export const TODAY = new Date();
 
 export const EMPTY_CALLBACK = () => {};
+
+export const DATA_TEST_ID = {
+  PREV_MONTH: "prevMonth",
+  NEXT_MONTH: "nextMonth",
+  TOGGLE_CALENDAR: "toggleCalendar",
+  PICK_DATE_CONTROL: "pickDateControl",
+  TODO_LIST: "todoList",
+  CLOSE_TODOLIST: "closeTodoList",
+  WEEK_DAYS: "weekDays",
+  CLEAR_BUTTON: "clearButton",
+};
