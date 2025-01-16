@@ -1,5 +1,84 @@
 # Библиотека Modsen DatePicker
 
+## Установка и использование
+
+### Установка:
+```
+npm i @sergeykachaliuk/modsen-datepicker-library
+
+yarn add @sergeykachaliuk/modsen-datepicker-library
+```
+
+### Использование:
+
+DatePicker:
+
+```
+import { DatePicker } from '@sergeykachaliuk/modsen-datepicker-library';
+import { useState } from 'react';
+
+function App() {
+    const [currentDate, setCurrentDate] = useState(new Date(2025, 1, 15));
+
+    const handleSelectDate = (date: Date) => {
+        setCurrentDate(date);
+    };
+
+    return (
+        <>
+            <div>
+                {currentDate.getDay()}/{currentDate.getMonth() + 1}/{currentDate.getFullYear()}
+            </div>
+            <DatePicker
+                dateSelected={currentDate}
+                onDateSelect={handleSelectDate}
+            />
+        </>
+    );
+}
+
+export default App;
+```
+
+DateRangePicker:
+
+```
+import { DateRangePicker } from '@sergeykachaliuk/modsen-datepicker-library';
+import { useState } from 'react';
+
+function App() {
+    const [startRange, setStartRange] = useState(new Date(2025, 1, 15));
+    const [endRange, setEndRange] = useState(new Date(2025, 1, 17));
+
+    const handleSelectStartDate = (date: Date) => {
+        setStartRange(date);
+    };
+
+    const handleSelectEndDate = (date: Date) => {
+        setEndRange(date);
+    };
+
+    return (
+        <>
+            <div>
+                {startRange.getDay()}/{startRange.getMonth() + 1}/{startRange.getFullYear()}
+                {endRange.getDay()}/{endRange.getMonth() + 1}/{endRange.getFullYear()}
+                <DateRangePicker
+                    onRangeStartSelect={handleSelectStartDate}
+                    onRangeEndSelect={handleSelectEndDate}
+                />
+            </div>
+        </>
+    );
+}
+
+export default App;
+```
+
+
+
+
+
 #### Функционал:
 
 - Просмотр календаря;
