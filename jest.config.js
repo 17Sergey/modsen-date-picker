@@ -17,7 +17,7 @@ module.exports = {
     "\\.(jpg|jpeg|png|gif|svg)$": "<rootDir>/src/utils/testing/imgSrcMock.ts",
     "\\.(css|less|sass|scss)$": "identity-obj-proxy",
     "^@assets/(.*)$": "<rootDir>/src/assets/$1",
-    "^@components/(.*)$": "<rootDir>/src/components/$1",
+    "^components/(.*)$": "<rootDir>/src/components/$1",
     "^@constants/(.*)$": "<rootDir>/src/constants/$1",
     "^@decorators/(.*)$": "<rootDir>/src/decorators/$1",
     "^@utils/(.*)$": "<rootDir>/src/utils/$1",

@@ -1,8 +1,8 @@
 import { FC, PropsWithChildren } from "react";
 
-import IconButton from "@components/IconButton";
-import NextArrow from "@components/Icons/NextArrow";
-import PrevArrow from "@components/Icons/PrevArrow";
+import IconButton from "components/IconButton";
+import NextArrow from "components/Icons/NextArrow";
+import PrevArrow from "components/Icons/PrevArrow";
 
 import { DATA_TEST_ID } from "@constants/constants";
 

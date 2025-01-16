@@ -1,7 +1,7 @@
 import { ChangeEvent, FC, useState } from "react";
 
-import IconButton from "@components/IconButton";
-import Clear from "@components/Icons/Clear";
+import IconButton from "components/IconButton";
+import Clear from "components/Icons/Clear";
 
 import { useTodo } from "@decorators/withToDo/TodoProvider";
 

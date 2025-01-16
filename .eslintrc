@@ -34,7 +34,7 @@
         "newlines-between": "always",
         "pathGroups": [
           {
-            "pattern": "@components/**",
+            "pattern": "components/**",
             "group": "internal",
             "position": "after"
           },

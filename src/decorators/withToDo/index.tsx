@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 
-import { DayProps } from "@components/Calendar/Day/Day.types";
+import { DayProps } from "components/Calendar/Day/Day.types";
 
 import { formatDate } from "@utils/helpers/otherFunctions";
 

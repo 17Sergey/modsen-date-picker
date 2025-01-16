@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 
-import DatePicker from "@components/DatePicker";
+import DatePicker from "components/DatePicker";
 
 import { openCalendar } from "@utils/testing/openCalendar";
 

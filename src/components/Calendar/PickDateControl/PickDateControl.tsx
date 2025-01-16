@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from "react";
 
-import IconButton from "@components/IconButton";
-import Calendar from "@components/Icons/Calendar";
-import Clear from "@components/Icons/Clear";
+import IconButton from "components/IconButton";
+import Calendar from "components/Icons/Calendar";
+import Clear from "components/Icons/Clear";
 
 import { formatDate } from "@utils/helpers/otherFunctions";
 import {

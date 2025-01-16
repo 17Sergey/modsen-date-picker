@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 
-import ThemeWrapper from "@components/ThemeWrapper";
+import ThemeWrapper from "components/ThemeWrapper";
 
 import { DATA_TEST_ID } from "@constants/constants";
 

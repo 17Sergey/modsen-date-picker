@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 
-import DateRangePicker from "@components/DateRangePicker";
+import DateRangePicker from "components/DateRangePicker";
 
 describe("Date Picker pick date", () => {
   const mockOnRangeStartSelect = jest.fn();

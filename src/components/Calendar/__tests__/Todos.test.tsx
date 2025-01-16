@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 
-import ThemeWrapper from "@components/ThemeWrapper";
-import Calendar from "@components/Calendar";
+import ThemeWrapper from "components/ThemeWrapper";
+import Calendar from "components/Calendar";
 
 import { openCalendar } from "@utils/testing/openCalendar";
 

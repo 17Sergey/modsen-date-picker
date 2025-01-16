@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 
-import DatePicker from "@components/DatePicker";
-import DateRangePicker from "@components/DateRangePicker";
+import DatePicker from "components/DatePicker";
+import DateRangePicker from "components/DateRangePicker";
 
 import { DATA_TEST_ID } from "@constants/constants";
 
