@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "types": ["@testing-library/jest-dom", "jest-styled-components"],
+    "target": "ESNext",
+    "outDir": "lib",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationDir": "lib",
+    "emitDeclarationOnly": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@assets/*": ["./src/assets/*"],
+      "components/*": ["./src/components/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@decorators/*": ["./src/decorators/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@types/*": ["./src/types/*"]
+    }
+  },
+  "include": ["src/**/*", "src/styles/styled.d.ts", "jest.setup.js"],
+  "exclude": ["node_modules", "lib"]
+}
+
